@@ -18,7 +18,6 @@
   <body>
     <div class="container">
       <div class="flex justify-between items-center py-4 my-5">
-        <p>Ripon video</p>
         <a href="{{ route('index') }}"><h2 class="text-red-500">Home</h2></a>
       <a href="{{ route('create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Add new post</a>
       </div>
