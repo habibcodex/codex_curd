@@ -35,8 +35,9 @@ class productcontroller extends Controller
        $product->name = $request->input('name');
        $product->description = $request->input('description');
        $product->save();
+       flash()->success('Product created successfully!');
 
-        return redirect()->route('index')->with('success', 'Product created successfully!');
+        return redirect()->route('index');
 
     }
 
@@ -75,15 +76,18 @@ class productcontroller extends Controller
         $product->description = $request->input('description');
         $product->save();
 
+        flash()->success('Product updated successfully!');
 
-        return redirect()->route('index')->with('success', 'Product updated successfully!');
+        return redirect()->route('index');
     }
 
     public function destroy($id){
         $product = Product::findOrFail($id);
         $product->delete();
+        flash()->success('Product deleted successfully!');
 
-        return redirect()->route('index')->with('success', 'Product deleted successfully!');
+
+        return redirect()->route('index');
     }
 
 }
